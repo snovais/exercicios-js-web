@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de JavaScript para Iniciantes</title>
+    <!-- CONECTANDO O CSS EXTERNO -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- 
+        ============================================================
+        TÍTULO PRINCIPAL
+        ============================================================
+        Aqui usamos apenas <h1> (sem class ou id) pois é único na página
+        e queremos um estilo global para todos os h1
+    -->
+    <h1>🎯 Aula de JavaScript para Web</h1>
+    
+    <!-- 
+        ============================================================
+        CONTAINER PRINCIPAL
+        ============================================================
+        class="container" - Usamos CLASSE (.) porque:
+        - Pode ser reutilizado em outros containers se necessário
+        - É um agrupador visual/não é um elemento único
+        - No CSS usaremos .container (com ponto)
+    -->
+    <div class="container">
+        
+        <!-- 
+            ============================================================
+            EXERCÍCIO 1 - CARD
+            ============================================================
+            class="card" - CLASSE (.) porque:
+            - Vários exercícios usarão o mesmo estilo de card
+            - Reutilizamos o mesmo visual em todos os 5 cards
+            - No CSS usaremos .card (com ponto)
+        -->
+        <div class="card">
+            <h2>📝 Exercício 1: Saudação Personalizada</h2>
+            <p>Digite seu nome e clique no botão.</p>
+            
+            <!-- 
+                id="nomeUsuario" - ID (#) porque:
+                - É um campo ÚNICO (só existe um campo de nome)
+                - Precisamos acessá-lo especificamente no JavaScript
+                - No CSS usaremos #nomeUsuario (com #)
+                - REGRA DE OURO: IDs são ÚNICOS na página!
+            -->
+            <input type="text" id="nomeUsuario" class="input-text" placeholder="Digite seu nome">
+            
+            <!-- 
+                class="btn" - CLASSE (.) porque:
+                - Vários botões terão o mesmo estilo
+                - Reutilizamos a aparência do botão
+                - onclick chama a função do JavaScript
+            -->
+            <button class="btn" onclick="saudar()">Dizer Olá</button>
+            
+            <!-- 
+                id="saudacao" - ID (#) porque:
+                - É onde vamos EXIBIR o resultado da saudação (único local)
+                - O JavaScript vai escrever dentro deste elemento específico
+            -->
+            <p id="saudacao" class="resultado"></p>
+        </div>
+
+        <!-- 
+            ============================================================
+            EXERCÍCIO 2 - CALCULADORA
+            ============================================================
+        -->
+        <div class="card">
+            <h2>🧮 Exercício 2: Calculadora Simples</h2>
+            <p>Informe dois números para somar.</p>
+            
+            <!-- Cada input tem seu próprio ID único para o JS acessar -->
+            <input type="number" id="num1" class="input-text" placeholder="Número 1">
+            <input type="number" id="num2" class="input-text" placeholder="Número 2">
+            <button class="btn" onclick="somar()">Somar</button>
+            
+            <!-- 
+                span é inline (não quebra linha)
+                id="resultadoSoma" - ID único para o JavaScript mostrar o resultado
+            -->
+            <p>Resultado: <span id="resultadoSoma" class="resultado">0</span></p>
+        </div>
+
+        <!-- 
+            ============================================================
+            EXERCÍCIO 3 - QUADRADO COLORIDO
+            ============================================================
+        -->
+        <div class="card">
+            <h2>🎨 Exercício 3: Mudar Cor do Quadrado</h2>
+            <p>Clique nos botões para alterar a cor.</p>
+            
+            <!-- 
+                id="quadrado" - ID único porque o JavaScript precisa alterar especificamente este quadrado
+                class="quadrado" não funcionaria se houvesse mais de um quadrado (confundiria o JS)
+            -->
+            <div id="quadrado"></div>
+            
+            <!-- 
+                button-group é uma CLASSE (.) porque agrupa visualmente os botões
+                As cores (btn-red, btn-green, btn-blue) são CLASSES para reutilizar estilo
+            -->
+            <div class="button-group">
+                <button class="btn btn-red" onclick="mudarCor('red')">Vermelho</button>
+                <button class="btn btn-green" onclick="mudarCor('green')">Verde</button>
+                <button class="btn btn-blue" onclick="mudarCor('blue')">Azul</button>
+            </div>
+        </div>
+
+        <!-- 
+            ============================================================
+            EXERCÍCIO 4 - LISTA DE TAREFAS
+            ============================================================
+        -->
+        <div class="card">
+            <h2>✅ Exercício 4: Lista de Tarefas</h2>
+            <p>Adicione tarefas à sua lista.</p>
+            
+            <!-- id único para o JS saber qual campo ler -->
+            <input type="text" id="tarefa" class="input-text" placeholder="Nova tarefa">
+            <button class="btn" onclick="adicionarTarefa()">Adicionar</button>
+            
+            <!-- 
+                id="minhaLista" - ID porque o JS vai adicionar itens dentro dela
+                class="tarefa-lista" - CLASSE para estilizar a lista (pode ser reutilizada)
+            -->
+            <ul id="minhaLista" class="tarefa-lista"></ul>
+        </div>
+
+        <!-- 
+            ============================================================
+            EXERCÍCIO 5 - FORMULÁRIO
+            ============================================================
+        -->
+        <div class="card">
+            <h2>🔐 Exercício 5: Validação de Formulário</h2>
+            <p>Email (com @) e senha (mínimo 4 caracteres).</p>
+            
+            <!-- 
+                onsubmit="return validarFormulario()" - evento do formulário
+                return false no JavaScript impede o envio tradicional (recarregar página)
+            -->
+            <form onsubmit="return validarFormulario()">
+                <!-- Cada campo com seu ID único -->
+                <input type="text" id="email" class="input-text" placeholder="Seu email">
+                <input type="password" id="senha" class="input-text" placeholder="Sua senha">
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+            
+            <!-- id único para exibir mensagem de erro/sucesso -->
+            <p id="feedback" class="feedback"></p>
+        </div>
+
+    </div>
+
+    <!-- CONECTANDO O JAVASCRIPT EXTERNO (sempre no final do body) -->
+    <script src="/js/script.js"></script>
+</body>
+</html>

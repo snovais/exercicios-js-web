@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript com API - GET, POST, PUT e Tratamento de Erros</title>
+    <link rel="stylesheet" href="/exercicio-2/css/style.css">
+</head>
+<body>
+
+    <h1>🌐 JavaScript com Requisições HTTP</h1>
+    
+    <div class="container">
+        
+        <!-- ============================================ -->
+        <!-- EXERCÍCIO 1: REQUISIÇÃO GET (Buscar dados)   -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>📥 GET - Buscar Usuário</h2>
+            <p>Buscar dados de um usuário pelo ID (1 a 10)</p>
+            
+            <input type="number" id="userId" class="input-text" placeholder="Digite o ID (1-10)" min="1" max="10">
+            <button class="btn" onclick="buscarUsuario()">Buscar com GET</button>
+            
+            <div id="resultadoGet" class="resultado-box">
+                <!-- Resultado aparecerá aqui -->
+            </div>
+            
+            <!-- Status da requisição -->
+            <div id="statusGet" class="status"></div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- EXERCÍCIO 2: REQUISIÇÃO POST (Criar dados)   -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>📤 POST - Criar Usuário</h2>
+            <p>Criar um novo usuário (simulado)</p>
+            
+            <input type="text" id="postNome" class="input-text" placeholder="Nome do usuário">
+            <input type="text" id="postEmail" class="input-text" placeholder="Email">
+            <button class="btn" onclick="criarUsuario()">Enviar com POST</button>
+            
+            <div id="resultadoPost" class="resultado-box">
+                <!-- Resultado aparecerá aqui -->
+            </div>
+            <div id="statusPost" class="status"></div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- EXERCÍCIO 3: REQUISIÇÃO PUT (Atualizar)      -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>🔄 PUT - Atualizar Usuário</h2>
+            <p>Atualizar dados de um usuário existente</p>
+            
+            <input type="number" id="putId" class="input-text" placeholder="ID do usuário (1-10)">
+            <input type="text" id="putNome" class="input-text" placeholder="Novo nome">
+            <button class="btn" onclick="atualizarUsuario()">Atualizar com PUT</button>
+            
+            <div id="resultadoPut" class="resultado-box">
+                <!-- Resultado aparecerá aqui -->
+            </div>
+            <div id="statusPut" class="status"></div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- EXERCÍCIO 4: REQUISIÇÃO DELETE (Remover)     -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>🗑️ DELETE - Remover Usuário</h2>
+            <p>Remover um usuário pelo ID</p>
+            
+            <input type="number" id="deleteId" class="input-text" placeholder="ID do usuário">
+            <button class="btn btn-red" onclick="deletarUsuario()">Deletar com DELETE</button>
+            
+            <div id="resultadoDelete" class="resultado-box">
+                <!-- Resultado aparecerá aqui -->
+            </div>
+            <div id="statusDelete" class="status"></div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- EXERCÍCIO 5: TRATANDO ERROS (404, 500, etc)  -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>⚠️ Tratamento de Erros HTTP</h2>
+            <p>Testar diferentes códigos de erro</p>
+            
+            <select id="errorType" class="input-text">
+                <option value="200">200 - Sucesso (URL válida)</option>
+                <option value="404">404 - Página Não Encontrada</option>
+                <option value="500">500 - Erro Interno do Servidor</option>
+                <option value="401">401 - Não Autorizado</option>
+                <option value="403">403 - Acesso Proibido</option>
+            </select>
+            <button class="btn" onclick="testarErro()">Testar Requisição</button>
+            
+            <div id="resultadoErro" class="resultado-box">
+                <!-- Resultado aparecerá aqui -->
+            </div>
+            <div id="statusErro" class="status"></div>
+        </div>
+
+    </div>
+
+    <script src="/exercicio-2/js/script.js"></script>
+</body>
+</html>

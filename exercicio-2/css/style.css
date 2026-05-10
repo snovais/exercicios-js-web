@@ -1,0 +1,183 @@
+/* ============================================================
+   RESET BÁSICO
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   ESTILO DO CORPO DA PÁGINA
+   ============================================================ */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* ============================================================
+   TÍTULO PRINCIPAL
+   ============================================================ */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ============================================================
+   CONTAINER PRINCIPAL
+   ============================================================ */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+/* ============================================================
+   CARDS DOS EXERCÍCIOS
+   ============================================================ */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #667eea;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.card p {
+    color: #666;
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+/* ============================================================
+   INPUTS
+   ============================================================ */
+.input-text {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-text:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 5px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #5a67d8;
+    transform: scale(1.05);
+}
+
+.btn-red {
+    background: #fc8181;
+}
+
+.btn-red:hover {
+    background: #e53e3e;
+}
+
+/* ============================================================
+   CAIXAS DE RESULTADO
+   ============================================================ */
+.resultado-box {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    min-height: 100px;
+    border-left: 4px solid #667eea;
+}
+
+/* ============================================================
+   STATUS DA REQUISIÇÃO
+   ============================================================ */
+.status {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-success {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.status-error {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+.status-warning {
+    background: #feebc8;
+    color: #7c2d12;
+}
+
+/* ============================================================
+   SELECT (dropdown)
+   ============================================================ */
+select.input-text {
+    cursor: pointer;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+}

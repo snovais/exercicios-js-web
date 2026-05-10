@@ -1,0 +1,273 @@
+/* ============================================================
+   RESET BÁSICO - Remove margens e padding padrão do navegador
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz com que padding não aumente o tamanho do elemento */
+}
+
+/* ============================================================
+   ESTILO DO CORPO DA PÁGINA
+   ============================================================
+   body - seletor por TAG (não usa . ou #)
+   Aplica estilo a TODA a página
+*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh; /* Altura mínima = 100% da tela */
+    padding: 40px 20px;
+}
+
+/* ============================================================
+   TÍTULO PRINCIPAL (h1)
+   ============================================================
+   Seletor por TAG - afeta TODOS os h1 da página
+*/
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ============================================================
+   CONTAINER PRINCIPAL
+   ============================================================
+   .container - Usando PONTO (.)
+   Isso é uma CLASSE - pode ser usada em VÁRIOS elementos
+   REGRA: .nome-da-classe { estilos }
+*/
+.container {
+    max-width: 1400px;
+    margin: 0 auto; /* Centraliza o container */
+    display: grid; /* Layout em grade */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px; /* Espaçamento entre os cards */
+}
+
+/* ============================================================
+   CARDS DOS EXERCÍCIOS
+   ============================================================
+   .card - CLASSE (usa ponto)
+   Todos os elementos com class="card" terão este estilo
+*/
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.card:hover {
+    transform: translateY(-5px); /* Levanta o card */
+}
+
+/* Títulos dentro do card */
+.card h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #667eea;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Parágrafos dentro do card */
+.card p {
+    color: #666;
+    margin: 15px 0;
+}
+
+/* ============================================================
+   INPUTS (campos de texto)
+   ============================================================
+   .input-text - CLASSE (usa ponto)
+   Aplicamos a TODOS os inputs que tiverem essa classe
+*/
+.input-text {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+/* Quando o usuário clica no input (foco) */
+.input-text:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* ============================================================
+   BOTÕES GENÉRICOS
+   ============================================================
+   .btn - CLASSE (usa ponto)
+   Todos os botões principais terão esse estilo base
+*/
+.btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer; /* Muda o cursor para mãozinha */
+    font-size: 16px;
+    margin: 10px 5px;
+    transition: all 0.3s;
+}
+
+/* Efeito ao passar o mouse no botão */
+.btn:hover {
+    background: #5a67d8;
+    transform: scale(1.05); /* Aumenta levemente */
+}
+
+/* ============================================================
+   BOTÕES ESPECÍFICOS DO EXERCÍCIO 3 (cores)
+   ============================================================
+   .btn-red, .btn-green, .btn-blue - CLASSES específicas
+   Combinamos a classe base .btn com essas classes
+*/
+.btn-red { background: #fc8181; }
+.btn-green { background: #68d391; }
+.btn-blue { background: #63b3ed; }
+
+/* Hover para cada cor específica */
+.btn-red:hover { background: #e53e3e; }
+.btn-green:hover { background: #38a169; }
+.btn-blue:hover { background: #3182ce; }
+
+/* ============================================================
+   GRUPO DE BOTÕES (container dos botões)
+   ============================================================
+   .button-group - CLASSE (usa ponto)
+*/
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* ============================================================
+   QUADRADO DO EXERCÍCIO 3
+   ============================================================
+   #quadrado - Usando CERQUILHA/HASH (#)
+   Isso é um ID - deve ser ÚNICO na página
+   REGRA: #nome-do-id { estilos }
+   DIFERENÇA: ID é para elementos únicos, CLASSE para grupos
+*/
+#quadrado {
+    width: 150px;
+    height: 150px;
+    background-color: #cbd5e0;
+    border-radius: 10px;
+    margin: 20px auto; /* auto centraliza horizontalmente */
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ============================================================
+   RESULTADOS E FEEDBACK
+   ============================================================
+   .resultado - CLASSE (pode ser usado em vários lugares)
+*/
+.resultado {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px;
+    background: #edf2f7;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* .feedback - CLASSE para mensagens de erro/sucesso */
+.feedback {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ============================================================
+   LISTA DE TAREFAS (EXERCÍCIO 4)
+   ============================================================
+   #minhaLista - ID (único) mas usamos para estilizar também
+   A vantagem do ID é que SÓ ELE recebe este estilo
+*/
+#minhaLista {
+    list-style: none; /* Remove as bolinhas padrão */
+    margin-top: 20px;
+    padding: 0;
+}
+
+/* Itens da lista (li) que estão DENTRO de #minhaLista */
+#minhaLista li {
+    background: #f7fafc;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s;
+}
+
+/* Efeito ao passar o mouse no item da lista */
+#minhaLista li:hover {
+    background: #edf2f7;
+    transform: translateX(5px);
+}
+
+/* ============================================================
+   RESPONSIVIDADE (para celulares e tablets)
+   ============================================================
+   @media - Regra para telas menores que 768px
+*/
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Uma coluna apenas */
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .button-group {
+        flex-direction: column; /* Botões empilhados */
+    }
+    
+    .btn {
+        width: 100%; /* Botões ocupam toda largura */
+    }
+    
+    #quadrado {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* ============================================================
+   RESUMO RÁPIDO:
+   
+   .classe (PONTO) = usa em VÁRIOS elementos (ex: vários botões, vários cards)
+   #id (CERQUILHA) = usa em UM elemento ÚNICO (ex: um campo específico)
+   
+   QUANDO USAR:
+   - ID (#): Quando o JavaScript precisa acessar UM elemento específico
+   - CLASSE (.): Quando vários elementos compartilham o mesmo estilo visual
+   
+   EXEMPLO:
+   <button id="botaoEnviar"> - Único, JS vai pegar ele
+   <button class="botaoPadrao"> - Vários botões com mesma aparência
+   ============================================================ */
